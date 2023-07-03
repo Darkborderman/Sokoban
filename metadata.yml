@@ -1,0 +1,10 @@
+github:
+  description: Sokoban, a Godot 4 practice project.
+  enable_discussions: false
+  enable_issues: true
+  enable_projects: false
+  enable_wiki: false
+  homepage: https://github.com/Darkborderman/Sokoban
+  template: false
+  topics:
+    - godot
