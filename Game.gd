@@ -15,6 +15,6 @@ func _process(_delta):
 	for i in $Goals.get_children():
 		if i.occupied:
 			goals -=1
-	if goals == 0:
+	if goals == 0 and game_end == false:
 		$AcceptDialog.popup()
 		game_end = true
