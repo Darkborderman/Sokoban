@@ -1,0 +1,38 @@
+name: Application release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Godot 4
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.0.3-stable/Godot_v4.0.3-stable_linux.x86_64.zip -q -O Godot_4.0.3.zip
+          unzip Godot_4.0.3.zip
+          mv Godot_v4.0.3-stable_linux.x86_64 godot
+          chmod +x godot
+      - name: Download Godot 4 export templates
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.1-stable/Godot_v4.1-stable_export_templates.tpz -q -O templates.zip
+          unzip templates.zip
+          mkdir -p /home/runner/.local/share/godot/export_templates/4.0.3.stable/
+          mv templates/windows_debug_x86_64.exe /home/runner/.local/share/godot/export_templates/4.0.3.stable/
+          mv templates/windows_release_x86_64.exe /home/runner/.local/share/godot/export_templates/4.0.3.stable/
+      - name: Export projects
+        run: |
+          mkdir outputs/
+          ./godot --headless --path . --export-release Windows
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: Windows-64bit-build
+          path: |
+            outputs/Sokoban_win64.exe
+            outputs/Sokoban_win64.pck
+          retention-days: 7
