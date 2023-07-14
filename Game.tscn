@@ -1,14 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://pm1sbrdykl1c"]
+[gd_scene load_steps=2 format=3 uid="uid://pm1sbrdykl1c"]
 
 [ext_resource type="Script" path="res://Game.gd" id="1_2ragq"]
-[ext_resource type="PackedScene" uid="uid://c1qjod1p0pjxq" path="res://Player.tscn" id="1_s4cgh"]
-[ext_resource type="PackedScene" uid="uid://bmpyoqu8eb5tf" path="res://wall.tscn" id="2_7shl8"]
-[ext_resource type="PackedScene" uid="uid://cqnsin8bik5g0" path="res://crate.tscn" id="3_2gwnh"]
-[ext_resource type="Script" path="res://crate.gd" id="3_ay3ot"]
-[ext_resource type="Script" path="res://goal.gd" id="3_qujx7"]
-[ext_resource type="PackedScene" uid="uid://dlqduyfrum6gd" path="res://goal.tscn" id="4_pr6k7"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_2ragq")
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
@@ -23,74 +17,21 @@ zoom = Vector2(0.6, 0.6)
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="Wall" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(384, 320)
-
-[node name="Wall2" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(512, 320)
-
-[node name="Wall3" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(512, 448)
-
-[node name="Wall4" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(512, 384)
-
-[node name="Wall5" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(384, 384)
-
-[node name="Wall6" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(384, 448)
-
-[node name="Wall7" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(384, 256)
-
-[node name="Wall8" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(448, 256)
-
-[node name="Wall9" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(512, 256)
-
-[node name="Wall10" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(512, 576)
-
-[node name="Wall11" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(384, 512)
-
-[node name="Wall12" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(512, 512)
-
-[node name="Wall13" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(384, 576)
-
-[node name="Wall14" parent="Walls" instance=ExtResource("2_7shl8")]
-position = Vector2(448, 576)
-
-[node name="Player" parent="." instance=ExtResource("1_s4cgh")]
-position = Vector2(448, 320)
-
 [node name="Goals" type="Node2D" parent="."]
 
-[node name="Goal" parent="Goals" instance=ExtResource("4_pr6k7")]
-position = Vector2(448, 512)
-script = ExtResource("3_qujx7")
+[node name="Players" type="Node2D" parent="."]
 
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Crate" parent="Node2D" groups=["crate"] instance=ExtResource("3_2gwnh")]
-position = Vector2(448, 448)
-script = ExtResource("3_ay3ot")
+[node name="Crates" type="Node2D" parent="."]
 
 [node name="MovesLabel" type="Label" parent="."]
-offset_top = 320.0
-offset_right = 281.0
-offset_bottom = 384.0
+offset_left = 256.0
+offset_top = 64.0
+offset_right = 537.0
+offset_bottom = 128.0
 text = "moves"
 
 [node name="LevelLabel" type="Label" parent="."]
-offset_top = 256.0
-offset_right = 281.0
-offset_bottom = 320.0
-text = "Level 1"
-
-[connection signal="body_entered" from="Goals/Goal" to="Goals/Goal" method="_on_body_entered"]
-[connection signal="body_exited" from="Goals/Goal" to="Goals/Goal" method="_on_body_exited"]
+offset_left = 256.0
+offset_right = 537.0
+offset_bottom = 64.0
+text = "Level: 1"

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqnsin8bik5g0"]
+[gd_scene load_steps=4 format=3 uid="uid://cqnsin8bik5g0"]
 
 [ext_resource type="Texture2D" uid="uid://cnyio7tnq5ywm" path="res://assets/crate.png" id="1_5tmt8"]
+[ext_resource type="Script" path="res://crate.gd" id="1_tycr6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvxy0"]
 size = Vector2(60, 59)
 
-[node name="Crate" type="CharacterBody2D"]
+[node name="Crate" type="CharacterBody2D" groups=["crate"]]
+script = ExtResource("1_tycr6")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_5tmt8")

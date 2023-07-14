@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmpyoqu8eb5tf"]
+[gd_scene load_steps=4 format=3 uid="uid://bmpyoqu8eb5tf"]
 
 [ext_resource type="Texture2D" uid="uid://datgy7p3a1b8v" path="res://assets/wall.png" id="1_ojt21"]
+[ext_resource type="Script" path="res://wall.gd" id="1_ougtv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehtqe"]
 size = Vector2(60, 60)
 
 [node name="Wall" type="StaticBody2D"]
+script = ExtResource("1_ougtv")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ojt21")
