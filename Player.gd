@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready
 var ray = $RayCast2D;
 @onready
-var game = get_tree().root.get_node("Game")
+var game = get_parent().get_parent()
 
 var GRID_SIZE = 64;
 var inputs = {
@@ -15,15 +15,15 @@ var inputs = {
 };
 
 
-func _input(event):
-	Logger.info("test")
-	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
-			move(dir)
+func _input(event: InputEvent):
+	if event is InputEventKey:
+		Logger.info("test")
+		for dir in inputs.keys():
+			if event.is_action_pressed(dir):
+				move(dir)
 
 
 func move(dir):
-	# var game = get_parent()
 
 	var vector_pos = inputs[dir] * GRID_SIZE
 	ray.target_position = inputs[dir] * GRID_SIZE
