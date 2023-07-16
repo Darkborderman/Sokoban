@@ -2,35 +2,37 @@
 
 [ext_resource type="Script" path="res://Game.gd" id="1_2ragq"]
 
-[node name="Game" type="Node2D"]
+[node name="Main" type="Node2D"]
+
+[node name="Game" type="Node2D" parent="."]
 script = ExtResource("1_2ragq")
 
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
+[node name="AcceptDialog" type="AcceptDialog" parent="Game"]
 title = "Cleared"
 position = Vector2i(185, 276)
 size = Vector2i(118, 100)
 dialog_text = "Level cleared"
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Game"]
 anchor_mode = 0
 zoom = Vector2(0.6, 0.6)
 
-[node name="Walls" type="Node2D" parent="."]
+[node name="Walls" type="Node2D" parent="Game"]
 
-[node name="Goals" type="Node2D" parent="."]
+[node name="Goals" type="Node2D" parent="Game"]
 
-[node name="Players" type="Node2D" parent="."]
+[node name="Players" type="Node2D" parent="Game"]
 
-[node name="Crates" type="Node2D" parent="."]
+[node name="Crates" type="Node2D" parent="Game"]
 
-[node name="MovesLabel" type="Label" parent="."]
+[node name="MovesLabel" type="Label" parent="Game"]
 offset_left = 256.0
 offset_top = 64.0
 offset_right = 537.0
 offset_bottom = 128.0
 text = "moves"
 
-[node name="LevelLabel" type="Label" parent="."]
+[node name="LevelLabel" type="Label" parent="Game"]
 offset_left = 256.0
 offset_right = 537.0
 offset_bottom = 64.0
