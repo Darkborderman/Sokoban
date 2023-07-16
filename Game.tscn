@@ -11,10 +11,6 @@ position = Vector2i(185, 276)
 size = Vector2i(118, 100)
 dialog_text = "Level cleared"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(0.6, 0.6)
-
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Goals" type="Node2D" parent="."]
@@ -28,10 +24,12 @@ offset_left = 256.0
 offset_top = 64.0
 offset_right = 537.0
 offset_bottom = 128.0
+theme_override_font_sizes/font_size = 16
 text = "moves"
 
 [node name="LevelLabel" type="Label" parent="."]
 offset_left = 256.0
 offset_right = 537.0
 offset_bottom = 64.0
+theme_override_font_sizes/font_size = 15
 text = "Level: 1"
