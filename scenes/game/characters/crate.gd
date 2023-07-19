@@ -4,7 +4,6 @@ extends CharacterBody2D
 
 @onready
 var ray = $RayCast2D;
-
 var GRID_SIZE = 64;
 var inputs = {
 	'ui_up': Vector2.UP,
@@ -12,7 +11,6 @@ var inputs = {
 	'ui_left': Vector2.LEFT,
 	'ui_right': Vector2.RIGHT,
 };
-
 
 
 func move(dir):
