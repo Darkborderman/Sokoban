@@ -1,4 +1,4 @@
-class_name Game
+class_name GameScene
 extends Node2D
 
 var game_end = false;

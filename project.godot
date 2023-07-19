@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Sokoban"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://scenes/main_scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Logger="*res://lib/logger.gd"
+Logger="*res://addons/logger.gd"
 
 [rendering]
 

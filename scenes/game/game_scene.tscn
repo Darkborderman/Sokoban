@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cmxsopfxreouk"]
 
-[ext_resource type="Script" path="res://Game.gd" id="1_rh1pw"]
+[ext_resource type="Script" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_rh1pw")
+script = ExtResource("1_vidrv")
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
 title = "Cleared"
