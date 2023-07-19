@@ -4,10 +4,10 @@ extends Node2D
 var game_end = false;
 
 var moves = 0
-const Wall = preload("res://wall.tscn")
-const Player = preload("res://Player.tscn")
-const Crate = preload("res://crate.tscn")
-const Goal = preload("res://goal.tscn")
+const Wall = preload("res://scenes/game/characters/wall.tscn")
+const Player = preload("res://scenes/game/characters/player.tscn")
+const Crate = preload("res://scenes/game/characters/crate.tscn")
+const Goal = preload("res://scenes/game/characters/goal.tscn")
 
 func read_level() -> String:
 	var text = FileAccess.get_file_as_string("res://levels/level1.json")

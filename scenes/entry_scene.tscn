@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/entry_scene.gd" id="1_p3e6x"]
 
-[node name="EntryScreen" type="Node2D"]
+[node name="EntryScene" type="Node2D"]
 script = ExtResource("1_p3e6x")
 
 [node name="PlayButton" type="Button" parent="."]
