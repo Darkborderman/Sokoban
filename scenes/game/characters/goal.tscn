@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlqduyfrum6gd"]
 
 [ext_resource type="Script" path="res://scenes/game/characters/goal.gd" id="1_hmdm5"]
-[ext_resource type="Texture2D" uid="uid://cjodq6sg53qrt" path="res://assets/goal.png" id="2_h54tv"]
+[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_61f5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7o4pw"]
 size = Vector2(60, 60)
@@ -10,8 +10,11 @@ size = Vector2(60, 60)
 script = ExtResource("1_hmdm5")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_h54tv")
+scale = Vector2(4, 4)
+texture = ExtResource("2_61f5b")
 centered = false
+region_enabled = true
+region_rect = Rect2(576, 192, 16, 16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, 32)
