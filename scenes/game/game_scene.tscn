@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmxsopfxreouk"]
+[gd_scene load_steps=3 format=3 uid="uid://cmxsopfxreouk"]
 
 [ext_resource type="Script" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
+[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_abc3e"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vidrv")
@@ -24,12 +25,12 @@ offset_left = 256.0
 offset_top = 64.0
 offset_right = 537.0
 offset_bottom = 128.0
-theme_override_font_sizes/font_size = 16
-text = "moves"
+theme_override_fonts/font = ExtResource("2_abc3e")
+text = "moves: 0"
 
 [node name="LevelLabel" type="Label" parent="."]
 offset_left = 256.0
-offset_right = 537.0
+offset_right = 512.0
 offset_bottom = 64.0
-theme_override_font_sizes/font_size = 15
+theme_override_fonts/font = ExtResource("2_abc3e")
 text = "Level: 1"
