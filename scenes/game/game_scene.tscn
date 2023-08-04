@@ -22,15 +22,17 @@ dialog_text = "Level cleared"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_left = 320.0
-offset_right = 584.0
-offset_bottom = 120.0
+offset_right = 592.0
+offset_bottom = 136.0
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
 color = Color(0.556863, 0.105882, 0, 1)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/ColorRect"]
 layout_mode = 2
+offset_right = 272.0
+offset_bottom = 136.0
 texture = ExtResource("2_6h88p")
 region_rect = Rect2(208, 240, 16, 16)
 patch_margin_left = 5
@@ -43,10 +45,19 @@ axis_stretch_vertical = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="LevelContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 7
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/LevelContainer"]
 layout_mode = 2
 text = "Level: 1"
 
-[node name="MovesLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="MovesContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+
+[node name="MovesLabel" type="Label" parent="MarginContainer/VBoxContainer/MovesContainer"]
 layout_mode = 2
 text = "Moves: 0"

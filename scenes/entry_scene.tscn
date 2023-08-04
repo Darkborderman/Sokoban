@@ -34,9 +34,9 @@ theme_override_font_sizes/font_size = 24
 text = "Quit"
 
 [node name="SokobanLabel" type="Label" parent="."]
-offset_left = 256.0
+offset_left = 261.0
 offset_top = 64.0
-offset_right = 896.0
+offset_right = 901.0
 offset_bottom = 192.0
 theme_override_fonts/font = ExtResource("2_5kn82")
 theme_override_font_sizes/font_size = 64
