@@ -29,10 +29,8 @@ offset_bottom = 136.0
 layout_mode = 2
 color = Color(0.556863, 0.105882, 0, 1)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/ColorRect"]
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
-offset_right = 272.0
-offset_bottom = 136.0
 texture = ExtResource("2_6h88p")
 region_rect = Rect2(208, 240, 16, 16)
 patch_margin_left = 5

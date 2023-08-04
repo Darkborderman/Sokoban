@@ -1,19 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://2f3f504by11o"]
+[gd_scene load_steps=5 format=3 uid="uid://2f3f504by11o"]
 
 [ext_resource type="Script" path="res://scenes/entry_scene.gd" id="1_p3e6x"]
 [ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_5kn82"]
+[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="3_ryfdl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_622f0"]
 
 [node name="EntryScene" type="Node2D"]
 script = ExtResource("1_p3e6x")
-
-[node name="PlayButton" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 256.0
-offset_right = 704.0
-offset_bottom = 320.0
-theme_override_fonts/font = ExtResource("2_5kn82")
-theme_override_font_sizes/font_size = 24
-text = "Play"
 
 [node name="SettingsButton" type="Button" parent="."]
 offset_left = 448.0
@@ -47,5 +41,33 @@ vertical_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 320)
 
-[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 320.0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.556863, 0.105882, 0, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_ryfdl")
+region_rect = Rect2(208, 240, 16, 16)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5kn82")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_622f0")
+text = "Play"
+
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/PlayButton" to="." method="_on_play_button_pressed"]
