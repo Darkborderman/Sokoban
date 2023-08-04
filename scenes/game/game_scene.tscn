@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmxsopfxreouk"]
+[gd_scene load_steps=4 format=3 uid="uid://cmxsopfxreouk"]
 
 [ext_resource type="Script" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
 [ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_6h88p"]
+[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="3_gf8un"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vidrv")
@@ -24,6 +25,7 @@ dialog_text = "Level cleared"
 offset_left = 320.0
 offset_right = 592.0
 offset_bottom = 136.0
+theme_override_constants/margin_left = 0
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
@@ -45,17 +47,21 @@ layout_mode = 2
 
 [node name="LevelContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 7
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
 
 [node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/LevelContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gf8un")
+theme_override_font_sizes/font_size = 24
 text = "Level: 1"
 
 [node name="MovesContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 8
+theme_override_constants/margin_left = 16
 
 [node name="MovesLabel" type="Label" parent="MarginContainer/VBoxContainer/MovesContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gf8un")
+theme_override_font_sizes/font_size = 24
 text = "Moves: 0"
