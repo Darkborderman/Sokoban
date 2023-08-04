@@ -52,7 +52,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	$MarginContainer/VBoxContainer/MovesLabel.text = "Moves: " + str(moves)
+	$MarginContainer/VBoxContainer/MovesContainer/MovesLabel.text = "Moves: " + str(moves)
 	$Players.get_child(0)  # TODO: handle with multiple children
 	var goals = $Goals.get_child_count()
 	for i in $Goals.get_children():
