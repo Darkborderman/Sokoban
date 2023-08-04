@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmxsopfxreouk"]
+[gd_scene load_steps=4 format=3 uid="uid://cmxsopfxreouk"]
 
 [ext_resource type="Script" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
-[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_abc3e"]
+[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_6h88p"]
+[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="3_gf8un"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vidrv")
@@ -20,17 +21,47 @@ dialog_text = "Level cleared"
 
 [node name="Crates" type="Node2D" parent="."]
 
-[node name="MovesLabel" type="Label" parent="."]
-offset_left = 256.0
-offset_top = 64.0
-offset_right = 537.0
-offset_bottom = 128.0
-theme_override_fonts/font = ExtResource("2_abc3e")
-text = "moves: 0"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_left = 320.0
+offset_right = 592.0
+offset_bottom = 136.0
+theme_override_constants/margin_left = 0
 
-[node name="LevelLabel" type="Label" parent="."]
-offset_left = 256.0
-offset_right = 512.0
-offset_bottom = 64.0
-theme_override_fonts/font = ExtResource("2_abc3e")
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.556863, 0.105882, 0, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_6h88p")
+region_rect = Rect2(208, 240, 16, 16)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VBoxContainer/LevelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gf8un")
+theme_override_font_sizes/font_size = 24
 text = "Level: 1"
+
+[node name="MovesContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="MovesLabel" type="Label" parent="MarginContainer/VBoxContainer/MovesContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gf8un")
+theme_override_font_sizes/font_size = 24
+text = "Moves: 0"
