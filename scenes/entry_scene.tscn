@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://2f3f504by11o"]
+[gd_scene load_steps=7 format=3 uid="uid://2f3f504by11o"]
 
 [ext_resource type="Script" path="res://scenes/entry_scene.gd" id="1_p3e6x"]
 [ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_5kn82"]
@@ -8,17 +8,10 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xxy5"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm42j"]
+
 [node name="EntryScene" type="Node2D"]
 script = ExtResource("1_p3e6x")
-
-[node name="QuitButton" type="Button" parent="."]
-offset_left = 448.0
-offset_top = 512.0
-offset_right = 704.0
-offset_bottom = 576.0
-theme_override_fonts/font = ExtResource("2_5kn82")
-theme_override_font_sizes/font_size = 24
-text = "Quit"
 
 [node name="SokobanLabel" type="Label" parent="."]
 offset_left = 261.0
@@ -92,5 +85,34 @@ theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4xxy5")
 text = "Settings"
 
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="QuitContainer" type="MarginContainer" parent="."]
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 576.0
+metadata/_edit_group_ = true
+
+[node name="ColorRect" type="ColorRect" parent="QuitContainer"]
+layout_mode = 2
+color = Color(0.556863, 0.105882, 0, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="QuitContainer"]
+layout_mode = 2
+texture = ExtResource("3_ryfdl")
+region_rect = Rect2(208, 240, 16, 16)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="QuitButton" type="Button" parent="QuitContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_5kn82")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nm42j")
+text = "Quit"
+
 [connection signal="pressed" from="PlayContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitContainer/QuitButton" to="." method="_on_quit_button_pressed"]
