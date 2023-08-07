@@ -9,12 +9,15 @@ const Player = preload("res://scenes/game/characters/player.tscn")
 const Crate = preload("res://scenes/game/characters/crate.tscn")
 const Goal = preload("res://scenes/game/characters/goal.tscn")
 
+
 func read_level() -> String:
 	var text = FileAccess.get_file_as_string("res://levels/level1.json")
 	return text
 
+
 func generate_level(level_data: Variant) -> void:
-	# TODO: add valid level validation
+	# TODO: Add valid level validation
+	# TODO: Add level proceed button switch judgement
 	var level = level_data[0]
 	Logger.info(level)
 	Logger.info(level["name"])
@@ -40,6 +43,7 @@ func generate_level(level_data: Variant) -> void:
 		goal.position.y = item[0] * 64
 		goal.position.x = item[1] * 64
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var json = JSON.new()
@@ -47,7 +51,6 @@ func _ready():
 	if error == OK:
 		var data_received = json.data
 		generate_level(data_received)
-
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
