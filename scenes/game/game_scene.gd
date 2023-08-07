@@ -59,5 +59,5 @@ func _process(_delta):
 		if i.occupied:
 			goals -=1
 	if goals == 0 and game_end == false:
-		$AcceptDialog.popup()
+		$ProceedButton.show()
 		game_end = true

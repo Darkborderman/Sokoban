@@ -16,12 +16,6 @@ region = Rect2(386.43, 320.861, 11.0807, 14.1887)
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_vidrv")
 
-[node name="AcceptDialog" type="AcceptDialog" parent="."]
-title = "Cleared"
-position = Vector2i(185, 276)
-size = Vector2i(118, 100)
-dialog_text = "Level cleared"
-
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Goals" type="Node2D" parent="."]
@@ -84,7 +78,7 @@ scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_r28am")
 script = ExtResource("4_qaygc")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="ProceedButton" type="TextureButton" parent="."]
 visible = false
 offset_left = 552.0
 offset_top = 56.0
