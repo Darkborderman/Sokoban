@@ -18,6 +18,7 @@ func read_level() -> String:
 func generate_level(level_data: Variant) -> void:
 	# TODO: Add valid level validation
 	var level = level_data[Global.level_index]
+	$MarginContainer/VBoxContainer/LevelContainer/LevelLabel.text = "Level: " + str(Global.level_index + 1)
 	Logger.info(level)
 	Logger.info(level["name"])
 	for item in level["walls"]:
