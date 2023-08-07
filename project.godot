@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Logger="*res://addons/logger.gd"
+Global="*res://scenes/global.gd"
 
 [rendering]
 

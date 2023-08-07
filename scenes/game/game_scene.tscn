@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmxsopfxreouk"]
+[gd_scene load_steps=8 format=3 uid="uid://cmxsopfxreouk"]
 
 [ext_resource type="Script" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
 [ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_6h88p"]
 [ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="3_gf8un"]
 [ext_resource type="Script" path="res://scenes/game/home_button.gd" id="4_qaygc"]
+[ext_resource type="Script" path="res://scenes/game/proceed_button.gd" id="5_bqnqm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r28am"]
 atlas = ExtResource("2_6h88p")
@@ -86,5 +87,7 @@ offset_right = 564.0
 offset_bottom = 70.0
 scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_l5hhf")
+script = ExtResource("5_bqnqm")
 
 [connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]
+[connection signal="pressed" from="ProceedButton" to="ProceedButton" method="_on_pressed"]

@@ -17,8 +17,7 @@ func read_level() -> String:
 
 func generate_level(level_data: Variant) -> void:
 	# TODO: Add valid level validation
-	# TODO: Add level proceed button switch judgement
-	var level = level_data[0]
+	var level = level_data[Global.level_index]
 	Logger.info(level)
 	Logger.info(level["name"])
 	for item in level["walls"]:
@@ -44,16 +43,25 @@ func generate_level(level_data: Variant) -> void:
 		goal.position.x = item[1] * 64
 
 
-# Called when the node enters the scene tree for the first time.
+func cleanup_level(node: Node) -> void:
+	for child in node.get_children():
+		node.remove_child(child)
+		child.queue_free()
+
+
 func _ready():
 	var json = JSON.new()
 	var error = json.parse(read_level())
 	if error == OK:
 		var data_received = json.data
-		generate_level(data_received)
+		var index = Global.level_index
+		var size = data_received.size()
+		if data_received.size() <= Global.level_index:
+			get_tree().change_scene_to_file("res://scenes/entry_scene.tscn")
+		else:
+			generate_level(data_received)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$MarginContainer/VBoxContainer/MovesContainer/MovesLabel.text = "Moves: " + str(moves)
 	$Players.get_child(0)  # TODO: handle with multiple children
@@ -61,6 +69,5 @@ func _process(_delta):
 	for i in $Goals.get_children():
 		if i.occupied:
 			goals -=1
-	if goals == 0 and game_end == false:
+	if goals == 0:
 		$ProceedButton.show()
-		game_end = true
