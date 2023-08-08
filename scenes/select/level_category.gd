@@ -1,5 +1,6 @@
-extends Node2D
+class_name LevelCategory
+extends Control
 
 
 func generate(label: String, index_count: int):
-	pass
+	$Label.text = label
