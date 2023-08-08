@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm15ylj4fyl5k"]
+
+[ext_resource type="Script" path="res://scenes/select/level_category.gd" id="1_mftoa"]
+
+[node name="LevelCategory" type="Node2D"]
+script = ExtResource("1_mftoa")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 26.0
+text = "test"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 72.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 56.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2

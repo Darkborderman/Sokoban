@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcgcy2xg34lqr"]
+
+[ext_resource type="Script" path="res://scenes/select/select_scene.gd" id="1_bej2w"]
+[ext_resource type="PackedScene" uid="uid://bm15ylj4fyl5k" path="res://scenes/select/level_category.tscn" id="2_y5otk"]
+
+[node name="SelectScene" type="Node2D"]
+script = ExtResource("1_bej2w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 656.0
+offset_bottom = 264.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="LevelCategory" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_y5otk")]
