@@ -8,10 +8,10 @@ extends Control
 func generate(level_id: String ,index_count: int):
 	level_index = index_count
 	level_pack_id = level_id
-	$Button.text = str(level_index)
+	$Button.text = str(level_index + 1)
 
 
 func _on_button_pressed():
-	Global.level_index = int($Button.text)
+	Global.level_index = int(level_index)
 	Global.level_pack_id = level_pack_id
 	get_tree().change_scene_to_file("res://scenes/game/game_scene.tscn")
