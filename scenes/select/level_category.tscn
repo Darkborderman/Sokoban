@@ -19,7 +19,7 @@ text = "    Text"
 layout_mode = 0
 offset_top = 26.0
 offset_right = 416.0
-offset_bottom = 90.0
+offset_bottom = 96.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
