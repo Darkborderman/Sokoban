@@ -8,5 +8,5 @@ func generate(label: String, index_count: int):
 	$Label.text = label
 	for i in index_count:
 		var level_button = LevelButton.instantiate()
-		level_button.generate(i)
+		level_button.generate(label, i)
 		$ScrollContainer/HBoxContainer.add_child(level_button)

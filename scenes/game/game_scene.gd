@@ -11,7 +11,7 @@ const Goal = preload("res://scenes/game/characters/goal.tscn")
 
 
 func read_level() -> String:
-	var text = FileAccess.get_file_as_string("res://levels/level1.json")
+	var text = FileAccess.get_file_as_string("res://levels/" + Global.level_pack_id)
 	return text
 
 
