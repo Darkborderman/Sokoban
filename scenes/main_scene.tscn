@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://2f3f504by11o"]
 
-[ext_resource type="Script" path="res://scenes/entry_scene.gd" id="1_p3e6x"]
-[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_5kn82"]
-[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="3_ryfdl"]
+[ext_resource type="Script" path="res://scenes/main_scene.gd" id="1_4e77g"]
+[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_6exhg"]
+[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="3_xbk0j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_622f0"]
 
@@ -11,14 +11,14 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nm42j"]
 
 [node name="EntryScene" type="Node2D"]
-script = ExtResource("1_p3e6x")
+script = ExtResource("1_4e77g")
 
 [node name="SokobanLabel" type="Label" parent="."]
 offset_left = 261.0
 offset_top = 64.0
 offset_right = 901.0
 offset_bottom = 192.0
-theme_override_fonts/font = ExtResource("2_5kn82")
+theme_override_fonts/font = ExtResource("2_6exhg")
 theme_override_font_sizes/font_size = 64
 text = "Sokoban"
 horizontal_alignment = 1
@@ -40,7 +40,7 @@ color = Color(0.556863, 0.105882, 0, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PlayContainer"]
 layout_mode = 2
-texture = ExtResource("3_ryfdl")
+texture = ExtResource("3_xbk0j")
 region_rect = Rect2(208, 240, 16, 16)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -51,7 +51,7 @@ axis_stretch_vertical = 1
 
 [node name="PlayButton" type="Button" parent="PlayContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5kn82")
+theme_override_fonts/font = ExtResource("2_6exhg")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_622f0")
 text = "Play"
@@ -69,7 +69,7 @@ color = Color(0.556863, 0.105882, 0, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="SettingContainer"]
 layout_mode = 2
-texture = ExtResource("3_ryfdl")
+texture = ExtResource("3_xbk0j")
 region_rect = Rect2(208, 240, 16, 16)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -80,7 +80,7 @@ axis_stretch_vertical = 1
 
 [node name="SettingsButton" type="Button" parent="SettingContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5kn82")
+theme_override_fonts/font = ExtResource("2_6exhg")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_4xxy5")
 text = "Settings"
@@ -98,7 +98,7 @@ color = Color(0.556863, 0.105882, 0, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="QuitContainer"]
 layout_mode = 2
-texture = ExtResource("3_ryfdl")
+texture = ExtResource("3_xbk0j")
 region_rect = Rect2(208, 240, 16, 16)
 patch_margin_left = 5
 patch_margin_top = 5
@@ -109,7 +109,7 @@ axis_stretch_vertical = 1
 
 [node name="QuitButton" type="Button" parent="QuitContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_5kn82")
+theme_override_fonts/font = ExtResource("2_6exhg")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nm42j")
 text = "Quit"
