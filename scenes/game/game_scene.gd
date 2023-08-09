@@ -58,7 +58,7 @@ func _ready():
 		var index = Global.level_index
 		var size = data_received.size()
 		if data_received.size() <= Global.level_index:
-			get_tree().change_scene_to_file("res://scenes/entry_scene.tscn")
+			get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 		else:
 			generate_level(data_received)
 

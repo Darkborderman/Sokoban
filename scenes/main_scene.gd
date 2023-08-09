@@ -1,7 +1,15 @@
 class_name MainScene
 extends Node2D
 
-# Called when the node enters the scene tree for the first time.
+
+# Reset Global variables
 func _ready():
-	# Load entry screen
-	get_tree().change_scene_to_file("res://scenes/entry_scene.tscn")
+	Global.level_pack_id = ""
+	Global.level_index = 0
+
+func _on_quit_button_pressed():
+	get_tree().quit()
+
+
+func _on_play_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/select/select_scene.tscn")
