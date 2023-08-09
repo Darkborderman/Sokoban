@@ -1,4 +1,4 @@
-class_name EntryScene
+class_name MainScene
 extends Node2D
 
 
