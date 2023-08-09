@@ -3,23 +3,23 @@
 [ext_resource type="Script" path="res://scenes/select/level_category.gd" id="1_mftoa"]
 
 [node name="LevelCategory" type="Control"]
-custom_minimum_size = Vector2(0, 16)
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 3
 anchors_preset = 0
+offset_bottom = 64.0
 script = ExtResource("1_mftoa")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 51.0
 offset_bottom = 26.0
-text = "    test"
+text = "    Text"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_left = 72.0
-offset_top = 16.0
-offset_right = 112.0
-offset_bottom = 56.0
+offset_top = 26.0
+offset_right = 416.0
+offset_bottom = 90.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
