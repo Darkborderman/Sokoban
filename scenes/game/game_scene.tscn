@@ -26,9 +26,10 @@ script = ExtResource("1_vidrv")
 [node name="Crates" type="Node2D" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 880.0
-offset_right = 1152.0
-offset_bottom = 136.0
+offset_left = 872.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 144.0
 theme_override_constants/margin_left = 0
 metadata/_edit_group_ = true
 
@@ -72,19 +73,19 @@ theme_override_font_sizes/font_size = 24
 text = "Moves: 0"
 
 [node name="HomeButton" type="TextureButton" parent="."]
-offset_left = 1112.0
-offset_top = 96.0
-offset_right = 1128.0
-offset_bottom = 112.0
+offset_left = 1104.0
+offset_top = 104.0
+offset_right = 1120.0
+offset_bottom = 120.0
 scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_r28am")
 script = ExtResource("4_qaygc")
 
 [node name="ProceedButton" type="TextureButton" parent="."]
-offset_left = 1112.0
-offset_top = 64.0
-offset_right = 1128.0
-offset_bottom = 80.0
+offset_left = 1104.0
+offset_top = 72.0
+offset_right = 1120.0
+offset_bottom = 88.0
 scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_l5hhf")
 script = ExtResource("5_bqnqm")
