@@ -80,6 +80,7 @@ texture_normal = SubResource("AtlasTexture_r28am")
 script = ExtResource("4_qaygc")
 
 [node name="ProceedButton" type="TextureButton" parent="."]
+visible = false
 offset_left = 544.0
 offset_top = 48.0
 offset_right = 560.0
