@@ -6,8 +6,8 @@ Sokoban, made by Godot 4.
 
 | Level Element | Character |
 | --- | --- |
-| Wall  | `#` |
 | Floor | `.` |
+| Wall  | `#` |
 | Player | `@` |
 | Player on goal square | `A` |
 | Box | `X` |
