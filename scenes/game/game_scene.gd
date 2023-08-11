@@ -17,31 +17,37 @@ func read_level() -> String:
 
 func generate_level(level_data: Variant) -> void:
 	# TODO: Add valid level validation
-	var level = level_data[Global.level_index]
 	$MarginContainer/VBoxContainer/LevelContainer/LevelLabel.text = "Level: " + str(Global.level_index + 1)
-	Logger.info(level)
-	Logger.info(level["name"])
-	for item in level["walls"]:
-		var wall: Wall = Wall.instantiate()
-		$Walls.add_child(wall)
-		wall.position.y = item[0] * 64
-		wall.position.x = item[1] * 64
-	for item in level["players"]:
-		var player: Player = Player.instantiate()
-		$Players.add_child(player)
-		player.position.y = item[0] * 64
-		player.position.x = item[1] * 64
-		pass
-	for item in level["crates"]:
-		var crate = Crate.instantiate()
-		$Crates.add_child(crate)
-		crate.position.y = item[0] * 64
-		crate.position.x = item[1] * 64
-	for item in level["goals"]:
-		var goal: Goal = Goal.instantiate()
-		$Goals.add_child(goal)
-		goal.position.y = item[0] * 64
-		goal.position.x = item[1] * 64
+
+	var row_index: int = 0
+	var char_index: int = 0
+	for row in level_data:
+		char_index = 0
+		for char in row:
+			if char == ".":
+				pass
+			if char == "#":
+				var wall: Wall = Wall.instantiate()
+				$Walls.add_child(wall)
+				wall.position.x = char_index * 64
+				wall.position.y = row_index * 64
+			if char == "@" or char == "A":
+				var player: Player = Player.instantiate()
+				$Players.add_child(player)
+				player.position.x = char_index * 64
+				player.position.y = row_index * 64
+			if char == "X" or char == "C":
+				var crate = Crate.instantiate()
+				$Crates.add_child(crate)
+				crate.position.x = char_index * 64
+				crate.position.y = row_index * 64
+			if char == "O" or char == "C":
+				var goal: Goal = Goal.instantiate()
+				$Goals.add_child(goal)
+				goal.position.x = char_index * 64
+				goal.position.y = row_index * 64
+			char_index += 1
+		row_index+= 1
 
 
 func cleanup_level(node: Node) -> void:
@@ -56,11 +62,11 @@ func _ready():
 	if error == OK:
 		var data_received = json.data
 		var index = Global.level_index
-		var size = data_received.size()
-		if data_received.size() <= Global.level_index:
+		var level_count = data_received["levels"].size()
+		if level_count <= Global.level_index:
 			get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
 		else:
-			generate_level(data_received)
+			generate_level(data_received["levels"][Global.level_index])
 
 
 func _process(_delta):
