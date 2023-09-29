@@ -26,6 +26,6 @@ func create_level_items(dir_path: String, file_name: String):
 	if error == OK:
 		var data_received = json.data
 		var index = Global.level_index
-		var size = data_received.size()
+		var size = data_received["levels"].size()
 		level_category.generate(file_name, size)
 		$ScrollContainer/VBoxContainer.add_child(level_category)
