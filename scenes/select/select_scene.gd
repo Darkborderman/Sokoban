@@ -1,8 +1,8 @@
 class_name SelectScene
 extends Node2D
 
-const dir_path = "res://levels/"
-const LevelCategory = preload("res://scenes/select/level_category.tscn")
+var dir_path = "res://levels/"
+var LevelCategory = preload("res://scenes/select/level_category.tscn")
 
 
 func _ready():
@@ -20,7 +20,7 @@ func generate_data_packs(path: String):
 
 func create_level_items(dir_path: String, file_name: String):
 	var text = FileAccess.get_file_as_string(dir_path + file_name)
-	var level_category: LevelCategory = LevelCategory.instantiate()
+	var level_category = LevelCategory.instantiate()
 	var json = JSON.new()
 	var error = json.parse(text)
 	if error == OK:
