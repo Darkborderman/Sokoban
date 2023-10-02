@@ -1,4 +1,4 @@
-name: Integration
+name: Publish to Github Pages
 
 on: push
 permissions:
