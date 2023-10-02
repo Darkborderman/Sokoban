@@ -10,11 +10,6 @@ var Crate = preload("res://scenes/game/characters/crate.tscn")
 var Goal = preload("res://scenes/game/characters/goal.tscn")
 
 
-func read_level() -> String:
-	var text = FileAccess.get_file_as_string("res://levels/" + Global.level_pack_id)
-	return text
-
-
 func generate_level(level_data: Variant) -> void:
 	# TODO: Add valid level validation
 	$MarginContainer/VBoxContainer/LevelContainer/LevelLabel.text = "Level: " + str(Global.level_index + 1)
@@ -57,16 +52,11 @@ func cleanup_level(node: Node) -> void:
 
 
 func _ready():
-	var json = JSON.new()
-	var error = json.parse(read_level())
-	if error == OK:
-		var data_received = json.data
-		var index = Global.level_index
-		var level_count = data_received["levels"].size()
-		if level_count <= Global.level_index:
-			get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
-		else:
-			generate_level(data_received["levels"][Global.level_index])
+	if len(Global.level_data[Global.mod_pack_id][Global.level_pack_id]) <= Global.level_index:
+		# All level solved, return to main scene
+		get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+	else:
+		generate_level(Global.level_data[Global.mod_pack_id][Global.level_pack_id][Global.level_index])
 
 
 func _process(_delta):
