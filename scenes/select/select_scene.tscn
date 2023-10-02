@@ -5,9 +5,6 @@
 [node name="SelectScene" type="Node2D"]
 script = ExtResource("1_bej2w")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 324)
-
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 offset_right = 592.0
 offset_bottom = 384.0
