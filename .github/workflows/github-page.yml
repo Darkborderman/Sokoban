@@ -1,0 +1,47 @@
+name: Integration
+
+on: push
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Godot 4
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.0.3-stable/Godot_v4.0.3-stable_linux.x86_64.zip -q -O Godot_4.0.3.zip
+          unzip Godot_4.0.3.zip
+          mv Godot_v4.0.3-stable_linux.x86_64 godot
+          chmod +x godot
+      - name: Download Godot 4 export templates
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.1-stable/Godot_v4.1-stable_export_templates.tpz -q -O templates.zip
+          unzip templates.zip
+          mkdir -p /home/runner/.local/share/godot/export_templates/4.0.3.stable/
+          mv templates/web_debug.zip /home/runner/.local/share/godot/export_templates/4.0.3.stable/
+          mv templates/web_release.zip /home/runner/.local/share/godot/export_templates/4.0.3.stable/
+      - name: Export projects
+        run: |
+          mkdir outputs/
+          mkdir outputs/web/
+          ./godot --headless --path . --export-release Web
+      # Workaround for SharedArrayBuffer support on GitHub Pages
+      # See: https://github.com/godotengine/godot-docs/issues/7084
+      - name: Patch SharedArrayBuffer support
+        run: |
+          cd outputs/web
+          curl -fsSL https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js > coi-serviceworker.js
+          sed -i 's#\(		<script src="index.js"></script>\)#		<script src="coi-serviceworker.js"></script>\n\1#g' index.html
+      - name: Publish to Github Pages
+        run: |
+          touch outputs/web/.nojekyll
+          cp -r .git/ outputs/web/
+          cd outputs/web
+          git add .
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Deployment ${{github.sha}}"
+          git push -u origin +HEAD:gh-pages
