@@ -1,4 +1,4 @@
-name: Integration
+name: Continuous integration
 
 on: push
 
@@ -29,6 +29,11 @@ jobs:
           mkdir outputs/web/
           ./godot --headless --path . --export-release Windows
           ./godot --headless --path . --export-release Web
+      - name: Patch SharedArrayBuffer support
+        run: |
+          cd outputs/web
+          curl -fsSL https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js > coi-serviceworker.js
+          sed -i 's#\(		<script src="index.js"></script>\)#		<script src="coi-serviceworker.js"></script>\n\1#g' index.html
       - name: Archive build artifacts
         uses: actions/upload-artifact@v3
         with:

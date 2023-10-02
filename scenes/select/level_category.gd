@@ -1,7 +1,7 @@
 class_name LevelCategory
 extends Control
 
-const LevelButton = preload("res://scenes/select/level_button.tscn")
+var LevelButton = preload("res://scenes/select/level_button.tscn")
 
 
 func generate(label: String, index_count: int):

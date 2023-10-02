@@ -4,7 +4,7 @@ github:
   enable_issues: true
   enable_projects: false
   enable_wiki: false
-  homepage: https://github.com/Darkborderman/Sokoban
+  homepage: https://darkborderman.github.io/Sokoban
   template: false
   topics:
     - godot

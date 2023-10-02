@@ -4,10 +4,10 @@ extends Node2D
 var game_end = false;
 
 var moves = 0
-const Wall = preload("res://scenes/game/characters/wall.tscn")
-const Player = preload("res://scenes/game/characters/player.tscn")
-const Crate = preload("res://scenes/game/characters/crate.tscn")
-const Goal = preload("res://scenes/game/characters/goal.tscn")
+var Wall = preload("res://scenes/game/characters/wall.tscn")
+var Player = preload("res://scenes/game/characters/player.tscn")
+var Crate = preload("res://scenes/game/characters/crate.tscn")
+var Goal = preload("res://scenes/game/characters/goal.tscn")
 
 
 func read_level() -> String:
@@ -27,12 +27,12 @@ func generate_level(level_data: Variant) -> void:
 			if char == ".":
 				pass
 			if char == "#":
-				var wall: Wall = Wall.instantiate()
+				var wall = Wall.instantiate()
 				$Walls.add_child(wall)
 				wall.position.x = char_index * 64
 				wall.position.y = row_index * 64
 			if char == "@" or char == "A":
-				var player: Player = Player.instantiate()
+				var player = Player.instantiate()
 				$Players.add_child(player)
 				player.position.x = char_index * 64
 				player.position.y = row_index * 64
@@ -42,7 +42,7 @@ func generate_level(level_data: Variant) -> void:
 				crate.position.x = char_index * 64
 				crate.position.y = row_index * 64
 			if char == "O" or char == "C":
-				var goal: Goal = Goal.instantiate()
+				var goal = Goal.instantiate()
 				$Goals.add_child(goal)
 				goal.position.x = char_index * 64
 				goal.position.y = row_index * 64
