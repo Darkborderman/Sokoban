@@ -40,6 +40,7 @@ func _ready():
 	Global.level_pack_id = ""
 	Global.level_index = 0
 	Global.level_data = {}
+	Global.init_save_data()
 	generate_data_packs(vanilla_path)
 
 

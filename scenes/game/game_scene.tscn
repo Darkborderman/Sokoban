@@ -72,6 +72,16 @@ theme_override_fonts/font = ExtResource("3_gf8un")
 theme_override_font_sizes/font_size = 24
 text = "Moves: 0"
 
+[node name="BestMovesContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="BestMovesLabel" type="Label" parent="MarginContainer/VBoxContainer/BestMovesContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gf8un")
+theme_override_font_sizes/font_size = 24
+text = "Best Moves: 0"
+
 [node name="HomeButton" type="TextureButton" parent="."]
 offset_left = 1104.0
 offset_top = 104.0
