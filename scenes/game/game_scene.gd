@@ -11,9 +11,13 @@ var Goal = preload("res://scenes/game/characters/goal.tscn")
 
 
 func generate_level(level_data: Variant) -> void:
-	# TODO: Add valid level validation
+	var best_moves = Global.get_best_record()
+	if best_moves <= 0:
+		best_moves = ""
+	$MarginContainer/VBoxContainer/BestMovesContainer/BestMovesLabel.text = "Best Moves: " + str(best_moves)
 	$MarginContainer/VBoxContainer/LevelContainer/LevelLabel.text = "Level: " + str(Global.level_index + 1)
 
+	# TODO: Add valid level validation
 	var row_index: int = 0
 	var char_index: int = 0
 	for row in level_data:
@@ -66,5 +70,7 @@ func _process(_delta):
 	for i in $Goals.get_children():
 		if i.occupied:
 			goals -=1
-	if goals == 0:
+	if goals == 0 and game_end == false:
+		Global.save_best_record(moves)
 		$ProceedButton.show()
+		game_end = true
