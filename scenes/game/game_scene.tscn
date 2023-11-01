@@ -1,16 +1,46 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmxsopfxreouk"]
+[gd_scene load_steps=14 format=3 uid="uid://cmxsopfxreouk"]
 
 [ext_resource type="Script" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
 [ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_6h88p"]
 [ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="3_gf8un"]
 [ext_resource type="Script" path="res://scenes/game/home_button.gd" id="4_qaygc"]
 [ext_resource type="Script" path="res://scenes/game/proceed_button.gd" id="5_bqnqm"]
+[ext_resource type="Script" path="res://scenes/game/touchpad_button.gd" id="6_gd7ot"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r28am"]
 atlas = ExtResource("2_6h88p")
 region = Rect2(656, 256, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5hhf"]
+atlas = ExtResource("2_6h88p")
+region = Rect2(384, 320, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvnnj"]
+atlas = ExtResource("2_6h88p")
+region = Rect2(368, 320, 16, 16)
+
+[sub_resource type="GDScript" id="GDScript_7xb1k"]
+script/source = "extends TextureButton
+
+@export
+var pressed_action = \"\"
+
+func _on_pressed():
+	print(\"test\")
+	var action = InputEventAction.new()
+	action.action = pressed_action
+	Input.parse_input_event(action)
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vks4u"]
+atlas = ExtResource("2_6h88p")
+region = Rect2(400, 320, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qduuu"]
+atlas = ExtResource("2_6h88p")
+region = Rect2(416, 320, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pnmg"]
 atlas = ExtResource("2_6h88p")
 region = Rect2(384, 320, 16, 16)
 
@@ -92,7 +122,6 @@ texture_normal = SubResource("AtlasTexture_r28am")
 script = ExtResource("4_qaygc")
 
 [node name="ProceedButton" type="TextureButton" parent="."]
-visible = false
 offset_left = 1104.0
 offset_top = 72.0
 offset_right = 1120.0
@@ -101,5 +130,49 @@ scale = Vector2(2, 2)
 texture_normal = SubResource("AtlasTexture_l5hhf")
 script = ExtResource("5_bqnqm")
 
+[node name="TouchPadUpButton" type="TextureButton" parent="."]
+offset_left = 896.0
+offset_top = 192.0
+offset_right = 912.0
+offset_bottom = 208.0
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_yvnnj")
+script = SubResource("GDScript_7xb1k")
+pressed_action = "ui_up"
+
+[node name="TouchPadDownButton" type="TextureButton" parent="."]
+offset_left = 896.0
+offset_top = 320.0
+offset_right = 912.0
+offset_bottom = 336.0
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_vks4u")
+script = ExtResource("6_gd7ot")
+pressed_action = "ui_down"
+
+[node name="TouchPadLeftButton" type="TextureButton" parent="."]
+offset_left = 832.0
+offset_top = 256.0
+offset_right = 848.0
+offset_bottom = 272.0
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_qduuu")
+script = ExtResource("6_gd7ot")
+pressed_action = "ui_left"
+
+[node name="TouchPadRightButton" type="TextureButton" parent="."]
+offset_left = 960.0
+offset_top = 256.0
+offset_right = 976.0
+offset_bottom = 272.0
+scale = Vector2(4, 4)
+texture_normal = SubResource("AtlasTexture_6pnmg")
+script = ExtResource("6_gd7ot")
+pressed_action = "ui_right"
+
 [connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]
 [connection signal="pressed" from="ProceedButton" to="ProceedButton" method="_on_pressed"]
+[connection signal="pressed" from="TouchPadUpButton" to="TouchPadUpButton" method="_on_pressed"]
+[connection signal="pressed" from="TouchPadDownButton" to="TouchPadDownButton" method="_on_pressed"]
+[connection signal="pressed" from="TouchPadLeftButton" to="TouchPadLeftButton" method="_on_pressed"]
+[connection signal="pressed" from="TouchPadRightButton" to="TouchPadRightButton" method="_on_pressed"]

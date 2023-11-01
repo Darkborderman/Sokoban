@@ -15,16 +15,22 @@ var inputs = {
 };
 
 
+
 func _input(event: InputEvent):
+	# Physical keyboard
 	if event is InputEventKey:
-		Logger.info("test")
 		for dir in inputs.keys():
 			if event.is_action_pressed(dir):
+				move(dir)
+	# Texture button
+	if event is InputEventAction:
+		for dir in inputs.keys():
+			if event.is_action(dir):
 				move(dir)
 
 
 func move(dir):
-
+	Logger.info(dir)
 	var vector_pos = inputs[dir] * GRID_SIZE
 	ray.target_position = inputs[dir] * GRID_SIZE
 	ray.force_raycast_update()
