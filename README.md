@@ -1,6 +1,10 @@
 # Sokoban
 
-Sokoban, made by Godot 4.
+A simple Sokoban game, made by Godot 4.
+
+## Requirements
+
+* Godot 4.1.3
 
 ## Level format
 
@@ -16,5 +20,4 @@ Sokoban, made by Godot 4.
 
 # Credits
 
-* Godot logger for Logging
 * Kenny Assets for character/object tilesets, fonts
