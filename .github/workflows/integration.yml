@@ -34,7 +34,7 @@ jobs:
           cd outputs/web
           curl -fsSL https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js > coi-serviceworker.js
           sed -i 's#\(		<script src="index.js"></script>\)#		<script src="coi-serviceworker.js"></script>\n\1#g' index.html
-      - name: Archive build artifacts
+      - name: Build Windows artifacts
         uses: actions/upload-artifact@v3
         with:
           name: Windows-64bit-build
@@ -42,7 +42,7 @@ jobs:
             outputs/Sokoban_win64.exe
             outputs/Sokoban_win64.pck
           retention-days: 7
-      - name: Archive build artifacts
+      - name: Build web artifacts
         uses: actions/upload-artifact@v3
         with:
           name: Web-build
