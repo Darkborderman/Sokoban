@@ -8,6 +8,7 @@ var Wall = preload("res://scenes/game/characters/wall.tscn")
 var Player = preload("res://scenes/game/characters/player.tscn")
 var Crate = preload("res://scenes/game/characters/crate.tscn")
 var Goal = preload("res://scenes/game/characters/goal.tscn")
+var complete_sound = preload("res://assets/jingles_PIZZI16.ogg")
 
 
 func generate_level(level_data: Variant) -> void:
@@ -73,4 +74,6 @@ func _process(_delta):
 	if goals == 0 and game_end == false:
 		Global.save_best_record(moves)
 		$ProceedButton.show()
+		$AudioStreamPlayer2D.stream = complete_sound
+		$AudioStreamPlayer2D.play()
 		game_end = true
