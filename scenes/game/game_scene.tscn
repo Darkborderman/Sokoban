@@ -157,6 +157,8 @@ texture_normal = SubResource("AtlasTexture_6pnmg")
 script = ExtResource("6_gd7ot")
 pressed_action = "ui_right"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]
 [connection signal="pressed" from="ProceedButton" to="ProceedButton" method="_on_pressed"]
 [connection signal="pressed" from="TouchPadUpButton" to="TouchPadUpButton" method="_on_pressed"]
