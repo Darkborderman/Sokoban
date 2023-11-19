@@ -23,3 +23,5 @@ shape = SubResource("RectangleShape2D_vqgb7")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(32, 32)
 target_position = Vector2(0, 64)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
