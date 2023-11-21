@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://2f3f504by11o"]
+
+[ext_resource type="Script" path="res://scenes/main/main_scene.gd" id="1_4e77g"]
+[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_6exhg"]
+[ext_resource type="PackedScene" uid="uid://onv87qamh7jw" path="res://scenes/main/play_button.tscn" id="3_gj5mp"]
+[ext_resource type="PackedScene" uid="uid://lqgd45qqiwt4" path="res://scenes/main/settings_button.tscn" id="4_xnl36"]
+[ext_resource type="PackedScene" uid="uid://b8s0ytovoq0xo" path="res://scenes/main/quit_button.tscn" id="4_yudiu"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_4e77g")
+
+[node name="SokobanLabel" type="Label" parent="."]
+offset_left = 261.0
+offset_top = 64.0
+offset_right = 901.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_6exhg")
+theme_override_font_sizes/font_size = 64
+text = "Sokoban"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" parent="." instance=ExtResource("3_gj5mp")]
+
+[node name="SettingsButton" parent="." instance=ExtResource("4_xnl36")]
+
+[node name="QuitButton" parent="." instance=ExtResource("4_yudiu")]

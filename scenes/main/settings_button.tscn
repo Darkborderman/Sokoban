@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://lqgd45qqiwt4"]
+
+[ext_resource type="Script" path="res://scenes/main/settings_button.gd" id="1_0b5ll"]
+[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="1_wdegs"]
+[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_bjv4t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xxy5"]
+
+[node name="SettingsButton" type="MarginContainer"]
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 704.0
+offset_bottom = 448.0
+script = ExtResource("1_0b5ll")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.556863, 0.105882, 0, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_wdegs")
+region_rect = Rect2(208, 240, 16, 16)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bjv4t")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_4xxy5")
+text = "Settings"
