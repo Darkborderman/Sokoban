@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/main/main_scene.gd" id="1_4e77g"]
 [ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_6exhg"]
-[ext_resource type="PackedScene" uid="uid://onv87qamh7jw" path="res://scenes/main/play_button.tscn" id="3_gj5mp"]
-[ext_resource type="PackedScene" uid="uid://lqgd45qqiwt4" path="res://scenes/main/settings_button.tscn" id="4_xnl36"]
-[ext_resource type="PackedScene" uid="uid://b8s0ytovoq0xo" path="res://scenes/main/quit_button.tscn" id="4_yudiu"]
+[ext_resource type="PackedScene" uid="uid://dvej7522jt7pg" path="res://scenes/main/play_button.tscn" id="3_gj5mp"]
+[ext_resource type="PackedScene" uid="uid://utd5kyjst5au" path="res://scenes/main/settings_button.tscn" id="4_xnl36"]
+[ext_resource type="PackedScene" uid="uid://cpcp5hefa8llg" path="res://scenes/main/quit_button.tscn" id="4_yudiu"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_4e77g")
@@ -21,7 +21,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayButton" parent="." instance=ExtResource("3_gj5mp")]
+offset_left = 448.0
+offset_top = 256.0
+offset_right = 704.0
+offset_bottom = 320.0
 
 [node name="SettingsButton" parent="." instance=ExtResource("4_xnl36")]
+offset_left = 448.0
+offset_top = 384.0
+offset_right = 704.0
+offset_bottom = 448.0
 
 [node name="QuitButton" parent="." instance=ExtResource("4_yudiu")]
+offset_left = 448.0
+offset_top = 512.0
+offset_right = 704.0
+offset_bottom = 576.0

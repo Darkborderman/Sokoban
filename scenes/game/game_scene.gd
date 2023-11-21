@@ -59,7 +59,7 @@ func cleanup_level(node: Node) -> void:
 func _ready():
 	if len(Global.level_data[Global.mod_pack_id][Global.level_pack_id]) <= Global.level_index:
 		# All level solved, return to main scene
-		get_tree().change_scene_to_file("res://scenes/main_scene.tscn")
+		get_tree().change_scene_to_file("res://scenes/main/main_scene.tscn")
 	else:
 		generate_level(Global.level_data[Global.mod_pack_id][Global.level_pack_id][Global.level_index])
 
