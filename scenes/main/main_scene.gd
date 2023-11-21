@@ -42,11 +42,3 @@ func _ready():
 	Global.level_data = {}
 	Global.init_save_data()
 	generate_data_packs(vanilla_path)
-
-
-func _on_quit_button_pressed():
-	get_tree().quit()
-
-
-func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/select/select_scene.tscn")
