@@ -20,4 +20,4 @@ A simple Sokoban game, made by Godot 4.
 
 # Credits
 
-* Kenny Assets for character/object tilesets, fonts
+* Kenny Assets for images, fonts, and sounds

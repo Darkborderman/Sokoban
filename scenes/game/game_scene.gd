@@ -10,12 +10,25 @@ var Goal = preload("res://scenes/game/characters/goal.tscn")
 var complete_sound = preload("res://assets/jingles_PIZZI16.ogg")
 
 
+func cleanup_children(node: Node) -> void:
+	# Release node's children
+	for child in node.get_children():
+		node.remove_child(child)
+		child.queue_free()
+
+
 func generate_level(level_data: Variant) -> void:
 	var best_moves = Global.get_best_record()
 	if best_moves <= 0:
 		best_moves = ""
 	$MarginContainer/VBoxContainer/BestMovesContainer/BestMovesLabel.text = "Best Moves: " + str(best_moves)
 	$MarginContainer/VBoxContainer/LevelContainer/LevelLabel.text = "Level: " + str(Global.level_index + 1)
+
+	# Cleanup stale level data
+	cleanup_children($Walls)
+	cleanup_children($Players)
+	cleanup_children($Crates)
+	cleanup_children($Goals)
 
 	# TODO: Add valid level validation
 	var row_index: int = 0
@@ -47,6 +60,7 @@ func generate_level(level_data: Variant) -> void:
 				goal.position.y = row_index * 64
 			char_index += 1
 		row_index+= 1
+	Global.current_level_moves = 0
 
 
 func complete() -> void:
@@ -63,7 +77,7 @@ func _ready():
 		get_tree().change_scene_to_file("res://scenes/main/main_scene.tscn")
 	else:
 		generate_level(Global.level_data[Global.mod_pack_id][Global.level_pack_id][Global.level_index])
-		Global.current_level_moves = 0
+
 
 
 func _process(_delta):
