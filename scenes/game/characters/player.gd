@@ -11,8 +11,6 @@ var step_sounds = [
 
 @onready
 var ray = $RayCast2D;
-@onready
-var game = get_parent().get_parent()
 
 var GRID_SIZE = 64;
 var inputs = {
@@ -49,7 +47,7 @@ func move(dir):
 	if !ray.is_colliding():
 		play_sound()
 		position += vector_pos
-		game.moves += 1
+		Global.current_level_moves += 1
 	else:
 		var collider = ray.get_collider();
 		print(collider.get_groups())
@@ -57,4 +55,4 @@ func move(dir):
 			if collider.move(dir):
 				play_sound()
 				position += vector_pos
-				game.moves += 1
+				Global.current_level_moves += 1
