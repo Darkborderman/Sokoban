@@ -1,7 +1,7 @@
 class_name GameScene
 extends Node2D
 
-var game_end = false;
+var level_completed = false;
 
 var Wall = preload("res://scenes/game/characters/wall.tscn")
 var Player = preload("res://scenes/game/characters/player.tscn")
@@ -60,7 +60,7 @@ func complete() -> void:
 	$ProceedButton.show()
 	$AudioStreamPlayer2D.stream = complete_sound
 	$AudioStreamPlayer2D.play()
-	game_end = true
+	level_completed = true
 
 
 func _ready():
@@ -74,10 +74,9 @@ func _ready():
 
 func _process(_delta):
 	$MarginContainer/VBoxContainer/MovesContainer/MovesLabel.text = "Moves: " + str(Global.current_level_moves)
-	$Players.get_child(0)  # TODO: handle with multiple children
 	var goals = $Goals.get_child_count()
 	for i in $Goals.get_children():
 		if i.occupied:
 			goals -=1
-	if goals == 0 and game_end == false:
+	if goals == 0 and level_completed == false:
 		complete()
