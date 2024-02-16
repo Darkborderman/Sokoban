@@ -1,9 +1,8 @@
 class_name GameScene
 extends Node2D
 
-var game_end = false;
+var level_completed = false;
 
-var moves = 0
 var Wall = preload("res://scenes/game/characters/wall.tscn")
 var Player = preload("res://scenes/game/characters/player.tscn")
 var Crate = preload("res://scenes/game/characters/crate.tscn")
@@ -50,10 +49,12 @@ func generate_level(level_data: Variant) -> void:
 		row_index+= 1
 
 
-func cleanup_level(node: Node) -> void:
-	for child in node.get_children():
-		node.remove_child(child)
-		child.queue_free()
+func complete() -> void:
+	Global.save_best_record(Global.current_level_moves)
+	$ProceedButton.show()
+	$AudioStreamPlayer2D.stream = complete_sound
+	$AudioStreamPlayer2D.play()
+	level_completed = true
 
 
 func _ready():
@@ -62,18 +63,14 @@ func _ready():
 		get_tree().change_scene_to_file("res://scenes/main/main_scene.tscn")
 	else:
 		generate_level(Global.level_data[Global.mod_pack_id][Global.level_pack_id][Global.level_index])
+		Global.current_level_moves = 0
 
 
 func _process(_delta):
-	$MarginContainer/VBoxContainer/MovesContainer/MovesLabel.text = "Moves: " + str(moves)
-	$Players.get_child(0)  # TODO: handle with multiple children
+	$MarginContainer/VBoxContainer/MovesContainer/MovesLabel.text = "Moves: " + str(Global.current_level_moves)
 	var goals = $Goals.get_child_count()
 	for i in $Goals.get_children():
 		if i.occupied:
 			goals -=1
-	if goals == 0 and game_end == false:
-		Global.save_best_record(moves)
-		$ProceedButton.show()
-		$AudioStreamPlayer2D.stream = complete_sound
-		$AudioStreamPlayer2D.play()
-		game_end = true
+	if goals == 0 and level_completed == false:
+		complete()

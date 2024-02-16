@@ -6,6 +6,8 @@ var level_pack_id: String = ""
 var level_data: Dictionary = {}
 var save_data_path = "user://save.json"
 
+var current_level_moves = 0
+
 func init_save_data(force_clean: bool = false):
 	print("Initialize save file, force_clean: " + str(force_clean))
 	# Should check file exist before open file
