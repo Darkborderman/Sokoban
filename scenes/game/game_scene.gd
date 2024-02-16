@@ -49,12 +49,6 @@ func generate_level(level_data: Variant) -> void:
 		row_index+= 1
 
 
-func cleanup_level(node: Node) -> void:
-	for child in node.get_children():
-		node.remove_child(child)
-		child.queue_free()
-
-
 func complete() -> void:
 	Global.save_best_record(Global.current_level_moves)
 	$ProceedButton.show()
