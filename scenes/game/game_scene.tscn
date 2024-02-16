@@ -123,3 +123,4 @@ script = ExtResource("7_3h456")
 
 [connection signal="pressed" from="HomeButton" to="HomeButton" method="_on_pressed"]
 [connection signal="pressed" from="ProceedButton" to="ProceedButton" method="_on_pressed"]
+[connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]
