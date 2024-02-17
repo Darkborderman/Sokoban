@@ -80,7 +80,6 @@ func _ready():
 		generate_level(Global.level_data[Global.mod_pack_id][Global.level_pack_id][Global.level_index])
 
 
-
 func _process(_delta):
 	$MarginContainer/VBoxContainer/MovesContainer/MovesLabel.text = "Moves: " + str(Global.current_level_moves)
 	var goals = $Goals.get_child_count()
@@ -89,3 +88,10 @@ func _process(_delta):
 			goals -=1
 	if goals == 0 and level_completed == false:
 		complete()
+
+
+func _input(event: InputEvent):
+	# Physical keyboard
+	if event is InputEventKey:
+			if event.is_action_pressed('ui_reset_level'):
+				generate_level(Global.level_data[Global.mod_pack_id][Global.level_pack_id][Global.level_index])
