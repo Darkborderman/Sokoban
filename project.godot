@@ -20,6 +20,10 @@ config/icon="res://assets/icon.svg"
 Logger="*res://addons/logger.gd"
 Global="*res://scenes/global.gd"
 
+[display]
+
+window/handheld/orientation=4
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
