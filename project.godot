@@ -22,7 +22,8 @@ Global="*res://scenes/global.gd"
 
 [display]
 
-window/size/resizable=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/handheld/orientation=4
 
 [input]
