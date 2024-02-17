@@ -29,6 +29,8 @@ func generate_level(level_data: Variant) -> void:
 	cleanup_children($Players)
 	cleanup_children($Crates)
 	cleanup_children($Goals)
+	Global.current_level_moves = 0
+	level_completed = false
 
 	# TODO: Add valid level validation
 	var row_index: int = 0
@@ -60,7 +62,6 @@ func generate_level(level_data: Variant) -> void:
 				goal.position.y = row_index * 64
 			char_index += 1
 		row_index+= 1
-	Global.current_level_moves = 0
 
 
 func complete() -> void:
