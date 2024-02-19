@@ -1,62 +1,62 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqb0awatqke8k"]
 
-[ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="1_3h8nk"]
 [ext_resource type="Script" path="res://scenes/game/touchpad_button.gd" id="2_8hd4m"]
+[ext_resource type="Texture2D" uid="uid://c1dsvfgnm6clq" path="res://assets/tilemap_white.png" id="3_kbpfl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvnnj"]
-atlas = ExtResource("1_3h8nk")
-region = Rect2(368, 320, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_d64o8"]
+atlas = ExtResource("3_kbpfl")
+region = Rect2(511.5, 205.5, 12, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vks4u"]
-atlas = ExtResource("1_3h8nk")
-region = Rect2(400, 320, 16, 16)
+atlas = ExtResource("3_kbpfl")
+region = Rect2(545.5, 205.5, 12, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qduuu"]
-atlas = ExtResource("1_3h8nk")
-region = Rect2(416, 320, 16, 16)
+atlas = ExtResource("3_kbpfl")
+region = Rect2(562.5, 205.5, 12, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pnmg"]
-atlas = ExtResource("1_3h8nk")
-region = Rect2(384, 320, 16, 16)
+atlas = ExtResource("3_kbpfl")
+region = Rect2(528.5, 205.5, 12, 12)
 
 [node name="TouchPad" type="Node2D"]
 
 [node name="TouchPadUpButton" type="TextureButton" parent="."]
-offset_left = 896.0
-offset_top = 192.0
-offset_right = 912.0
-offset_bottom = 208.0
-scale = Vector2(4, 4)
-texture_normal = SubResource("AtlasTexture_yvnnj")
+offset_left = 880.0
+offset_top = 144.0
+offset_right = 892.0
+offset_bottom = 156.0
+scale = Vector2(8, 8)
+texture_normal = SubResource("AtlasTexture_d64o8")
 script = ExtResource("2_8hd4m")
 pressed_action = "ui_up"
 
 [node name="TouchPadDownButton" type="TextureButton" parent="."]
-offset_left = 896.0
-offset_top = 320.0
-offset_right = 912.0
-offset_bottom = 336.0
-scale = Vector2(4, 4)
+offset_left = 880.0
+offset_top = 336.0
+offset_right = 892.0
+offset_bottom = 348.0
+scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_vks4u")
 script = ExtResource("2_8hd4m")
 pressed_action = "ui_down"
 
 [node name="TouchPadLeftButton" type="TextureButton" parent="."]
-offset_left = 832.0
-offset_top = 256.0
-offset_right = 848.0
-offset_bottom = 272.0
-scale = Vector2(4, 4)
+offset_left = 784.0
+offset_top = 240.0
+offset_right = 796.0
+offset_bottom = 252.0
+scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_qduuu")
 script = ExtResource("2_8hd4m")
 pressed_action = "ui_left"
 
 [node name="TouchPadRightButton" type="TextureButton" parent="."]
-offset_left = 960.0
-offset_top = 256.0
-offset_right = 976.0
-offset_bottom = 272.0
-scale = Vector2(4, 4)
+offset_left = 976.0
+offset_top = 240.0
+offset_right = 988.0
+offset_bottom = 252.0
+scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_6pnmg")
 script = ExtResource("2_8hd4m")
 pressed_action = "ui_right"
