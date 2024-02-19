@@ -33,12 +33,12 @@ script = ExtResource("1_vidrv")
 [node name="Crates" type="Node2D" parent="."]
 
 [node name="TouchPad" parent="." instance=ExtResource("4_hno58")]
-position = Vector2(64, 208)
+position = Vector2(104, 8)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 808.0
+offset_left = 936.0
 offset_top = 8.0
-offset_right = 1144.0
+offset_right = 1272.0
 offset_bottom = 144.0
 theme_override_constants/margin_left = 0
 metadata/_edit_group_ = true
@@ -96,9 +96,9 @@ theme_override_font_sizes/font_size = 24
 text = "Best Moves: 0"
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
-offset_left = 808.0
+offset_left = 1184.0
 offset_top = 152.0
-offset_right = 888.0
+offset_right = 1264.0
 offset_bottom = 368.0
 theme_override_constants/margin_left = 0
 metadata/_edit_group_ = true
