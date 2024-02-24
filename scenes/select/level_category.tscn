@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm15ylj4fyl5k"]
+[gd_scene load_steps=3 format=3 uid="uid://bm15ylj4fyl5k"]
 
 [ext_resource type="Script" path="res://scenes/select/level_category.gd" id="1_mftoa"]
+[ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_e5mhs"]
 
 [node name="LevelCategory" type="Control"]
 custom_minimum_size = Vector2(0, 64)
@@ -11,15 +12,17 @@ script = ExtResource("1_mftoa")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 51.0
-offset_bottom = 26.0
-text = "    Text"
+offset_right = 54.0
+offset_bottom = 33.0
+theme_override_fonts/font = ExtResource("2_e5mhs")
+theme_override_font_sizes/font_size = 24
+text = "Text"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 0
-offset_top = 26.0
+offset_top = 32.0
 offset_right = 416.0
-offset_bottom = 96.0
+offset_bottom = 112.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
