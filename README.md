@@ -4,7 +4,7 @@ A simple Sokoban game, made by Godot 4.
 
 ## Requirements
 
-* Godot 4.1.3
+* Godot 4.2.1
 
 ## Level format
 
