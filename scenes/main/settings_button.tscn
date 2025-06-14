@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xeud77s5yr0w" path="res://scenes/shared/border_button.tscn" id="1_skj28"]
 [ext_resource type="PackedScene" uid="uid://cm4bqqlxllng3" path="res://scenes/main/settings_popup.tscn" id="2_dj8c4"]
-[ext_resource type="Script" path="res://scenes/main/settings_button.gd" id="2_t34pk"]
+[ext_resource type="Script" uid="uid://bhc61j4s04car" path="res://scenes/main/settings_button.gd" id="2_t34pk"]
 
 [node name="BorderButton" instance=ExtResource("1_skj28")]
 script = ExtResource("2_t34pk")

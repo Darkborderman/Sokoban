@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlqduyfrum6gd"]
 
-[ext_resource type="Script" path="res://scenes/game/characters/goal.gd" id="1_hmdm5"]
+[ext_resource type="Script" uid="uid://ckmcu20jcdqx4" path="res://scenes/game/characters/goal.gd" id="1_hmdm5"]
 [ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_61f5b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7o4pw"]

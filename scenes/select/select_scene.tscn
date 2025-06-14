@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dcgcy2xg34lqr"]
 
-[ext_resource type="Script" path="res://scenes/select/select_scene.gd" id="1_bej2w"]
+[ext_resource type="Script" uid="uid://dbcjrgme14oek" path="res://scenes/select/select_scene.gd" id="1_bej2w"]
 [ext_resource type="PackedScene" uid="uid://cd2rbb58ofumf" path="res://scenes/select/back_button.tscn" id="2_te2fu"]
 
 [node name="SelectScene" type="Node2D"]

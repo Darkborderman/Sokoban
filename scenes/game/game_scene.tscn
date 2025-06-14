@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://cmxsopfxreouk"]
 
-[ext_resource type="Script" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
+[ext_resource type="Script" uid="uid://byrcsknla71kk" path="res://scenes/game/game_scene.gd" id="1_vidrv"]
 [ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_6h88p"]
 [ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="3_gf8un"]
 [ext_resource type="PackedScene" uid="uid://dqb0awatqke8k" path="res://scenes/game/touch_pad.tscn" id="4_hno58"]
-[ext_resource type="Script" path="res://scenes/game/home_button.gd" id="4_qaygc"]
-[ext_resource type="Script" path="res://scenes/game/proceed_button.gd" id="5_bqnqm"]
-[ext_resource type="Script" path="res://scenes/game/restart_button.gd" id="7_3h456"]
+[ext_resource type="Script" uid="uid://8552or3lrokn" path="res://scenes/game/home_button.gd" id="4_qaygc"]
+[ext_resource type="Script" uid="uid://bhd6ek4gtsj6r" path="res://scenes/game/proceed_button.gd" id="5_bqnqm"]
+[ext_resource type="Script" uid="uid://cim8r40gns42q" path="res://scenes/game/restart_button.gd" id="7_3h456"]
 [ext_resource type="Texture2D" uid="uid://c1dsvfgnm6clq" path="res://assets/tilemap_white.png" id="7_ip7uo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r28am"]

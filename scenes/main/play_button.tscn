@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvej7522jt7pg"]
 
-[ext_resource type="Script" path="res://scenes/main/play_button.gd" id="1_phjka"]
+[ext_resource type="Script" uid="uid://dewyrfhwx3bui" path="res://scenes/main/play_button.gd" id="1_phjka"]
 [ext_resource type="PackedScene" uid="uid://xeud77s5yr0w" path="res://scenes/shared/border_button.tscn" id="1_skiww"]
 
 [node name="BorderButton" instance=ExtResource("1_skiww")]

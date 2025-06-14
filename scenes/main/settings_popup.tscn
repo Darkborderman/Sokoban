@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cm4bqqlxllng3"]
 
 [ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="1_llt2b"]
-[ext_resource type="Script" path="res://scenes/main/settings_popup.gd" id="1_yd4l0"]
+[ext_resource type="Script" uid="uid://cyrjf2t52gdpp" path="res://scenes/main/settings_popup.gd" id="1_yd4l0"]
 [ext_resource type="FontFile" uid="uid://cn73q4gq2rdc4" path="res://assets/font.ttf" id="2_b4dcu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r5ent"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqb0awatqke8k"]
 
-[ext_resource type="Script" path="res://scenes/game/touchpad_button.gd" id="2_8hd4m"]
+[ext_resource type="Script" uid="uid://dgfpexfnl3bmr" path="res://scenes/game/touchpad_button.gd" id="2_8hd4m"]
 [ext_resource type="Texture2D" uid="uid://c1dsvfgnm6clq" path="res://assets/tilemap_white.png" id="3_kbpfl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d64o8"]

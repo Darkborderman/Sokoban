@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cd2rbb58ofumf"]
 
 [ext_resource type="PackedScene" uid="uid://xeud77s5yr0w" path="res://scenes/shared/border_button.tscn" id="1_p7rxn"]
-[ext_resource type="Script" path="res://scenes/select/back_button.gd" id="2_5mk63"]
+[ext_resource type="Script" uid="uid://vn48ghf42u8h" path="res://scenes/select/back_button.gd" id="2_5mk63"]
 
 [node name="BorderButton" instance=ExtResource("1_p7rxn")]
 offset_right = 192.0

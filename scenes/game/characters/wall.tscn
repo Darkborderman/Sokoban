@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmpyoqu8eb5tf"]
 
-[ext_resource type="Script" path="res://scenes/game/characters/wall.gd" id="1_s2541"]
+[ext_resource type="Script" uid="uid://bd051iads3245" path="res://scenes/game/characters/wall.gd" id="1_s2541"]
 [ext_resource type="Texture2D" uid="uid://vemii8rqlip" path="res://assets/tileset.png" id="2_nj35h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ehtqe"]
