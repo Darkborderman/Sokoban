@@ -29,10 +29,6 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=4
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/coi_serviceworker/plugin.cfg")
-
 [filesystem]
 
 import/blender/enabled=false
@@ -48,4 +44,6 @@ ui_reset_level={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
 environment/defaults/default_clear_color=Color(0.419608, 0.168627, 0.0392157, 1)

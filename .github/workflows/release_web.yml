@@ -1,6 +1,13 @@
-name: Continuous integration
+name: Publish to Github Pages
 
-on: push
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -19,8 +26,6 @@ jobs:
           wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz -q -O templates.zip
           unzip templates.zip
           mkdir -p /home/runner/.local/share/godot/export_templates/4.4.1.stable/
-          mv templates/windows_debug_x86_64.exe /home/runner/.local/share/godot/export_templates/4.4.1.stable/
-          mv templates/windows_release_x86_64.exe /home/runner/.local/share/godot/export_templates/4.4.1.stable/
           mv templates/web_debug.zip /home/runner/.local/share/godot/export_templates/4.4.1.stable/
           mv templates/web_nothreads_debug.zip /home/runner/.local/share/godot/export_templates/4.4.1.stable/
           mv templates/web_release.zip /home/runner/.local/share/godot/export_templates/4.4.1.stable/
@@ -29,20 +34,14 @@ jobs:
         run: |
           mkdir outputs/
           mkdir outputs/web/
-          ./godot --headless --path . --export-release Windows
           ./godot --headless --path . --export-release Web
-      - name: Build Windows artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Windows-64bit-build
-          path: |
-            outputs/Sokoban_win64.exe
-            outputs/Sokoban_win64.pck
-          retention-days: 7
-      - name: Build web artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: Web-build
-          path: |
-            outputs/web
-          retention-days: 7
+      - name: Publish to Github Pages
+        run: |
+          touch outputs/web/.nojekyll
+          cp -r .git/ outputs/web/
+          cd outputs/web
+          git add .
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Deployment ${{github.sha}}"
+          git push -u origin +HEAD:gh-pages

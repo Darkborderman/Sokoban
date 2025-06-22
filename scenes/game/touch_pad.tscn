@@ -22,9 +22,9 @@ region = Rect2(528.5, 205.5, 12, 12)
 [node name="TouchPad" type="Node2D"]
 
 [node name="TouchPadUpButton" type="TextureButton" parent="."]
-offset_left = 880.0
+offset_left = 992.0
 offset_top = 144.0
-offset_right = 892.0
+offset_right = 1004.0
 offset_bottom = 156.0
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_d64o8")
@@ -32,9 +32,9 @@ script = ExtResource("2_8hd4m")
 pressed_action = "ui_up"
 
 [node name="TouchPadDownButton" type="TextureButton" parent="."]
-offset_left = 880.0
+offset_left = 992.0
 offset_top = 336.0
-offset_right = 892.0
+offset_right = 1004.0
 offset_bottom = 348.0
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_vks4u")
@@ -42,9 +42,9 @@ script = ExtResource("2_8hd4m")
 pressed_action = "ui_down"
 
 [node name="TouchPadLeftButton" type="TextureButton" parent="."]
-offset_left = 784.0
+offset_left = 896.0
 offset_top = 240.0
-offset_right = 796.0
+offset_right = 908.0
 offset_bottom = 252.0
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_qduuu")
@@ -52,9 +52,9 @@ script = ExtResource("2_8hd4m")
 pressed_action = "ui_left"
 
 [node name="TouchPadRightButton" type="TextureButton" parent="."]
-offset_left = 976.0
+offset_left = 1088.0
 offset_top = 240.0
-offset_right = 988.0
+offset_right = 1100.0
 offset_bottom = 252.0
 scale = Vector2(8, 8)
 texture_normal = SubResource("AtlasTexture_6pnmg")
