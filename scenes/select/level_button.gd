@@ -10,7 +10,7 @@ func generate(mod_pack: String, level_pack: String, index: int):
 	mod_pack_id = mod_pack
 	level_pack_id = level_pack
 	level_index = index
-	$Button.text = str(index + 1)
+	$BorderButton/Button.text = str(index + 1)
 
 
 func _on_button_pressed():
