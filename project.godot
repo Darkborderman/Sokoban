@@ -27,7 +27,7 @@ Global="*res://scenes/global.gd"
 [display]
 
 window/size/viewport_width=1280
-window/size/viewport_height=540
+window/size/viewport_height=544
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 window/handheld/orientation=4
