@@ -17,12 +17,16 @@ func cleanup_children(node: Node) -> void:
 		child.queue_free()
 
 
-func generate_level(level_data: Variant) -> void:
+func update_panels() -> void:
 	var best_moves = Global.get_best_record()
 	if best_moves <= 0:
 		best_moves = ""
 	$MarginContainer/HBoxContainer/VBoxContainer/BestMovesContainer/BestMovesLabel.text = "Best Moves: " + str(best_moves)
 	$MarginContainer/HBoxContainer/VBoxContainer/LevelContainer/LevelLabel.text = "Level: " + str(Global.level_index + 1)
+
+
+func generate_level(level_data: Variant) -> void:
+	update_panels()
 
 	# Cleanup stale level data
 	cleanup_children($Walls)
@@ -30,6 +34,7 @@ func generate_level(level_data: Variant) -> void:
 	cleanup_children($Crates)
 	cleanup_children($Goals)
 	Global.current_level_moves = 0
+	$MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer3.hide()
 	level_completed = false
 
 	# TODO: Add valid level validation
@@ -66,6 +71,7 @@ func generate_level(level_data: Variant) -> void:
 
 func complete() -> void:
 	Global.save_best_record(Global.current_level_moves)
+	update_panels()
 	$MarginContainer2/HBoxContainer/VBoxContainer2/MarginContainer3.show()
 	$AudioStreamPlayer2D.stream = complete_sound
 	$AudioStreamPlayer2D.play()
