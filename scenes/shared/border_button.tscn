@@ -10,7 +10,7 @@ metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
-color = Color(0.556863, 0.105882, 0, 1)
+color = Color(0.313726, 0.313726, 0.313726, 1)
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
