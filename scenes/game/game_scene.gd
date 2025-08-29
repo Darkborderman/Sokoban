@@ -50,17 +50,21 @@ func generate_level(level_data: Variant) -> void:
         $Walls.add_child(wall)
         wall.position.x = char_index * 64
         wall.position.y = row_index * 64
+      # A -> char on goal
       if char == "@" or char == "A":
         var player = Player.instantiate()
         $Players.add_child(player)
         player.position.x = char_index * 64
         player.position.y = row_index * 64
-      if char == "X" or char == "C":
+      # Q -> crate on goal
+      if char == "X" or char == "Q":
         var crate = Crate.instantiate()
         $Crates.add_child(crate)
         crate.position.x = char_index * 64
         crate.position.y = row_index * 64
-      if char == "O" or char == "C":
+      # A -> char on goal
+      # Q -> crate on goal
+      if char == "O" or char == "A" or char == "Q":
         var goal = Goal.instantiate()
         $Goals.add_child(goal)
         goal.position.x = char_index * 64
